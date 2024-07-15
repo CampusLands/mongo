@@ -36,7 +36,7 @@ Description=Serveo SSH Tunnel
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/ssh -R port:localhost:27017 serveo.net
+ExecStart=/usr/bin/ssh -o StrictHostKeyChecking=no -R <port>:localhost:27017 serveo.net
 Restart=always
 RestartSec=60
 
