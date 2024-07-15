@@ -8,6 +8,7 @@ sudo apt update
 echo "deb http://security.ubuntu.com/ubuntu focal-security main" | sudo tee /etc/apt/sources.list.d/focal-security.list
 
 sudo apt-get update
+
 sudo apt-get install libssl1.1
 
 sudo apt install mongodb-org
