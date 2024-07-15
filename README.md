@@ -18,3 +18,59 @@ sudo systemctl start mongod.service
 sudo systemctl status mongod.service
 
 sudo systemctl enable mongod
+
+
+### Creacion de servicios serveo.net
+
+
+
+```bash
+sudo nano /etc/systemd/system/serveo-tunnel.service
+```
+
+Dentro del archivo:
+
+```ini
+[Unit]
+Description=Serveo SSH Tunnel
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/ssh -R port:localhost:27017 serveo.net
+Restart=always
+RestartSec=60
+
+[Install]
+WantedBy=multi-user.target
+```
+
+> Nota: reemplazar `port` por el puesrto deseado
+
+Guardar el archivo
+
+
+
+Recargar systemctl para que reconozca el servicio nuevo 
+
+```bash
+sudo systemctl daemon-reload
+```
+
+Iniciamos el servicio:
+
+```bash
+sudo systemctl start serveo-tunnel.service
+```
+
+Habilitar el serrvicio cuando se arranca el equipo:
+
+```bash
+sudo systemctl enable serveo-tunnel.service
+```
+
+Verificar estado del servicio:
+
+```bash
+sudo systemctl status serveo-tunnel.service
+```
+
