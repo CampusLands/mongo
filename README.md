@@ -61,6 +61,11 @@ Iniciamos el servicio:
 ```bash
 sudo systemctl start serveo-tunnel.service
 ```
+Verificar estado del servicio:
+
+```bash
+sudo systemctl status serveo-tunnel.service
+```
 
 Habilitar el serrvicio cuando se arranca el equipo:
 
@@ -68,9 +73,4 @@ Habilitar el serrvicio cuando se arranca el equipo:
 sudo systemctl enable serveo-tunnel.service
 ```
 
-Verificar estado del servicio:
-
-```bash
-sudo systemctl status serveo-tunnel.service
-```
 
