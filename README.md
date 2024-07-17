@@ -125,20 +125,16 @@ db.createRole(
     role: "administrador",
     privileges: [
       {
-        resource: { db: "", collection: "" },
+        resource: { db: "nombre_base_de_datos", collection: "" },
+        actions: ["find", "insert", "update", "remove", "createCollection", "createIndex", "dropCollection"]
+      },
+      {
+        resource: { db: "nombre_base_de_datos", collection: "system.users" },
         actions: ["find", "insert", "update", "remove"]
       },
       {
-        resource: { db: "", collection: "system.users" },
+        resource: { db: "nombre_base_de_datos", collection: "system.roles" },
         actions: ["find", "insert", "update", "remove"]
-      },
-      {
-        resource: { db: "", collection: "system.roles" },
-        actions: ["find", "insert", "update", "remove"]
-      },
-      {
-        resource: { db: "", collection: "" },
-        actions: ["createRole", "dropRole", "grantRole", "revokeRole", "createUser", "dropUser", "createDatabase"]
       }
     ],
     roles: []
