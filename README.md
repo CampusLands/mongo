@@ -125,6 +125,10 @@ db.createRole(
     role: "administrador",
     privileges: [
       {
+        resource: { db: "", collection: "" },
+        actions: ["find", "insert", "update", "remove"]
+      },
+      {
         resource: { db: "", collection: "system.users" },
         actions: ["find", "insert", "update", "remove"]
       },
