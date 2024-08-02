@@ -151,7 +151,22 @@ db.createUser(
   }
 )
 ```
-
+# Esponer el puerto 27017 de mongo en la red LAM
+```bash
+sudo apt-get install net-tools
+```
+```bash
+sudo ufw status
+```
+```bash
+sudo ufw enable
+```
+```bash
+sudo ufw status
+```
+```bash
+sudo ufw allow 27017/tcp
+```
 Nota: Asegúrese de tener creada la base de datos a la cual va a asignar el usuario. Tenga en cuenta que las colecciones creadas bajo el usuario root serán accesibles únicamente por el usuario root.
 
 Paso 7:
